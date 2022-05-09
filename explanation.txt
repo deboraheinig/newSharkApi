@@ -1,0 +1,9 @@
+1- criei variaveis pras views e inicializei elas na funcao initViews()
+2- atribui o layout manager diretamente pro recyclerview e eliminei a variavel dele pois ela so era usada uma vez
+3- criei uma variavel pra sharkapi e um metodo getDeals pra evitar a repeticao de codigo. esse metodo getDeals eh responsavel por fazer o controle de qual dos metodos do service vao ser chamados (o com ou sem o title pra buscar)
+4- eliminei a variavel do adapter pq ela so seria usada agora 1 vez no getDeals
+5- a pesquisa nao funcionava e crashava pq voce esqueceu de adicionar "suspend" antes de "fun" no getDeals com o title, corrigi isso e nao crashou mais
+6- entao, pra pesquisa funcionar, eu so precisei arrumar o value da Query("search") pra Query("title"), pq na documentacao da api o nome do parametro eh title mesmo
+7- depois disso tudo funcionava exceto a funcao de enter (que tava pulando linha), e o campo tava completamente ilegivel por causa da hint de "nome do jogo". 
+pra corrigir a hint eu coloquei ela no textinputlayout ao inves de no textinputedittext, e deixei a altura do parent do textinputlayout como wrap_content
+8- pra corrigir o problema do enter pulando linha eu so adicionei inputType="text" no textinputedittext
